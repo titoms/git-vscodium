@@ -13,7 +13,7 @@ FICHIER="$BACKUP_DIR/infralab-$HORODATAGE.txt"
 
 mkdir -p "$BACKUP_DIR"
 {
-  echo "Sauvegarde fictive InfraLab"
+  echo "Sauvegarde fictive InfraLab V2"
   echo "Date : $HORODATAGE"
   echo "Contenu : aucun (exercice de formation)"
 } > "$FICHIER"
