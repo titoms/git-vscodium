@@ -20,3 +20,4 @@ mkdir -p "$BACKUP_DIR"
 
 echo "Sauvegarde créée : $FICHIER"
 echo "Rétention configurée : $RETENTION_DAYS jours (aucune purge dans cet exercice)"
+echo "toto .sh"
