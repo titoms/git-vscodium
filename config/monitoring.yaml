@@ -10,3 +10,5 @@ services:
     port: 5432
   - name: sauvegarde
     port: 9000
+  - name: application1 
+    port: 383
