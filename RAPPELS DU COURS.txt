@@ -1,0 +1,201 @@
+GIT & VSCODIUM :
+
+Téléchargez et installez VSCodium
+https://github.com/VSCodium/vscodium/releases
+
+Installez Git sur votre poste.
+https://git-scm.com/install/windows
+
+WIFI :
+AU- ...
+oburo92600$
+
+GIT - Créée par Linus Torvald
+VERSIONNING - Garder un historique des modifications
+TRAVAIL A PLUSIEURS - Pouvoir collaborer a plusieurs sur un même ensemble de fichiers sans créer de conflits.
+
+COMMANDES UTILES :
+
+    git --version => Vérifier que l'installation est bien effectuée.
+    git clone [NOM_DU_DEPOT] => me permet de récupérer une copie complète du dépot AINSI que l'historique complet des modifications
+    git status => M'affiche l'état actuel de mon dépot GIT. Sur quelle branche je suis, combien de fichiers ont été modifiés, lesquels sont en staging, et si on a des modifications en retard ou en avance de la branche principale.
+    git log --oneline => Me permet de visualiser ou je me trouve et les informations du dernier commit.
+    git remote -v => M'indique les informations au sujet du dépot distant.
+    git branch => Visualiser sur quelle branche je me trouve actuellement
+    git checkout [NOM_DE_LA_BRANCHE] => Me permet de me connecter sur une branche particuliere
+    git checkout -b [BRANCHE] => Me permet de me connecter et de créer la branche si celle ci n'existe pas.
+    git add [FICHIER] => Ajouter un fichier au Staging (avant de commit)
+    git add * => Ajouter TOUTES les modifs au staging
+    git add . => Ajouter tout les fichiers du dossier au staging
+    git restore [FICHIER] => restaurer un fichier et enlever les modifications.
+    git restore --staged [FICHIER] => Restaurer un fichier qui était déja en staging (n'efface pas la modif)
+    git commit -m "MESSAGE DU COMMIT" => Va me permettre de créer une sauvegarde(commit) avec les fichiers modifiés. Il faut impérativement 
+    Règles du commit :
+    - Réfléchir un commit pour une modification concrête
+    - Sauvegarder(créer un commit) a chaque fois qu'une étape est franchie.
+    - Un message toujours descriptif des modification effectuées
+    git commit --allow-empty -m "Init du depot" => Me permet de lancer le premier commit pour initialiser Main et créer la référence sur laquelle on va créer nos branches.
+
+    git init => Me permet d'initaliser un repo GIT dans un dossier.
+    git switch [BRANCHE] => me permet aussi comme checkout de changer de branche
+    git switch -c feature/inventaire => Me permet de changer de branche et la créer si celle ci n'existe pas.
+    git status --ignored => Me permet de récupérer le status des fichiers, y compris d'afficher ceux ignorés.
+    git log --online --graph => Me permet de visualiser les derniers commits, avec leurs branches, leurs hash ainsi qu'une petite visualisation.
+
+    
+
+------------
+
+Vocabulaire :
+
+    - Dépôt ou Repository - Le dossier contenant notre ensemble de fichier a versionner.
+    - Commit - Un snapshot de notre ensemble de fichier. Une "sauvegarde". Les commits doivent être accompagnés d'un message.
+    - Historique - la suite des commits (sauvegardes)
+    - Branche - ligne de développement, on peut voir ça comme une bifurcation du code, me permettant de développer dessus, sans impacter la branche principale (main)
+    Créez une branche par fonctionnalité. (feature/nouveau-login, doc/script-initialisation)
+    Créez une branche par environnement (dev/preprod/prod)
+    - Staging area -  Salle d'attente des modifications a enregistrer.
+    - Dépot Local - Dépot Git sur notre poste, sur notre machine locale. Me permet de faire des modifications et des commit sans internet.
+    - Dépot distant (remote / origin) - Un dépot hébergé ailleurs que sur notre machines (Github, Gitlab, Gitbucket, Gog, Gitea). 
+    - Clone - Une copie complète du dépot, ainsi que de l'historique.
+    - HEAD - le commit sur lequel vous êtes entrain de travailler, "vous êtes ici".
+    - Tag - v1.0.0
+
+-----------
+
+MANIPS A EFFECTUER : 
+
+    - Cloner le depot suivant a l'aide de la commande :
+    git clone https://github.com/titoms/git-vscodium
+
+    - Commandes du CLI a connaitre :
+    pwd - Ou je me trouve?
+    ls - Lister les fichiers présents dans mon dossier
+    cd [DOSSIER] - Me permet de me déplacer dans un dossier
+    cd .. - Me permet de revenir en arrière
+    mkdir - Créer un dossier
+    touch - Créer un fichier
+    echo "texte" > fichier.txt - Me permet de écraser le texte du fichier par celui de la commande
+    echo "texte" >> fichier.txt - Me permet d'ajouter le texte du fichier par celui de la commande
+    cat fichier.txt - Me permet d'afficher le contenu d'un fichier.
+
+    • Chevron inférieur (<) : Alt + 60 (sur le pavé numérique)
+    • Chevron supérieur (>) : Alt + 62 (sur le pavé numérique)
+    - Arrobase (@)          : Alt + 64
+
+    Petit exercice 1 :
+
+    Faites plusieurs modifications sur votre dépot.
+    EN CREANT UNE BRANCHE PARTICULIERE.
+    Et créez 2 commits bien référéncés avec un message détaillé.
+    L'idée étant de revoir les différentes commandes :
+    git branch / git checkout -b
+    git status
+    git add 
+    git commit -m
+    git restore
+
+
+    --------------------------
+
+
+Après avoir crée ma clef SSH et l'avoir config dans GITHUB :
+
+1. Clonez le repo de votre "administrateur de groupe"
+
+    git clone  [ADRESSE DU REPO FORKE]
+
+2. Vous pouvez vérifier que tout est bon grâce aux commandes usivantes :
+    git status
+    git remote -v
+    git branch -a
+
+3. Créer une nouvelle branche "test-a" (ou "test-b")=> Chaqu'un une branche différente.
+    Faire une modification sur Readme.md
+    Créer un commit
+    PUIS pousser votre code :
+
+    git push
+    git push origin main
+
+4. Une fois le premier commit/push crée, sur votre machine LOCALE, revenez sur main et récupérez le travail qui vient d'être poussé sur le main distant (le dernier update)
+VERIFIEZ LORS DE LA CREATION DE LA PULL REQUEST QUE VOUS ETES BIEN SUR LE BASE REPOSITORY : 
+
+    git pull origin main    -> Git pull permet de récupérer les modifications tout en remplaçant nos fichiers. Généralement utile lorsque l'on pars d'un main a actualiser, et qu'on a aucune modification en développement chez nous.
+
+    git fetch origin        -> Git fetch récupère les modification sans rien écraser, nous permettant de observer, analyser les modifications que l'on doit intégrer, avant de décider de l'intégrer. (Généralement utile, lorsque on doit récupérer le boulot d'une autre branche avant de pousser la notre)
+
+5. Implémenter les modifs suivantes :
+
+- A	        
+    Ajouter une procédure de vérification avant installation, puis une vérification après installation	docs/installation.md
+- B	        
+    Ajouter une procédure de diagnostic d'incident puis une procédure d'escalade	docs/incidents.md
+- C     	
+    Ajouter les opérations de début et de fin de journée	docs/exploitation.md
+
+    2 commits par branche + Pull Request vers main
+    Un collègue doit examiner la pull request envoyée, puis la fusionner/merger manuellement
+    Tout le monde revient sur son MAIN local, puis vous récupérez les modifs.
+
+6. Créer un conflit "push refusé" :
+Quand git n'arrive pas a intégrer automatiquement une modif, on peut avoir un conflit de fusion.
+
+    1. Un collaborateur crée une branche "test/synchronisation" puis la publie (même sans modif)
+    2. Un autre collaborateur récupère cette branche -> git fetch origin / git branch -a, vous ouvez aussi créer une branche locale qui suit celle du collaborateur :
+        git switch --track origin/test/synchronisation
+    3. Collaborateur A fais un commit LOCAL (sans publier)
+    4. Collaborateur B fais un commit ET LE PUBLIE (push)
+    5. Collaborateur A essaye de push son commit -> ERREUR, REFUS DE GIT
+    6. Collaborateur A doit récupérer le travail de Collaborateur B, l'inspecter, intégrer ce travail, puis publier ses propres modifications.
+
+7. Créez une branche "text/erreur", créez un fichier bidon, avec du texte lambda, qui va représenter une mauvaise modificaiton. Le but étant de le add + commit. Nous allons vouloir annuler ce commit a l'aide de 
+
+    git revert [HASH_DU_COMMIT] (Git revert crée un nouveau commit, donc après le revert :)
+    git push
+
+8. Créer un conflit de "fusion" :
+Nous allons simuler le cas de figure ou 2 personnes auraient fait des modifs différentes sur le même fichier/même ligne de code.
+Dans "monitoring.yaml", repérez le paramètre "check_interval_seconds"
+
+    - Créez 2 branches distinctes depuis la branche main.
+    - Branche A modifie la valeur de check_interval a 30 secondes
+    - Branche B modifie la valeur de check_interval a 120 secondes
+    - Fusionnez la branche A
+    - Tentez de fusionner la branche B
+    - Résoudre le conflit avant de pouvoir fusionner la branche B.
+
+9. Collaborateur A crée une nouvelle branche et fais une modification rapide.
+Collaborateur B crée une nouvelle branche et fais une modification qu'il va commit et pousser
+Collaborateur A doit récupérer les modifs du collaborateur B, sauf qu'il a des modification personnelles en attente.
+Mettez de côté vos modifications a l'aide de :
+
+    git stash
+
+Récupérez les modifications du collaborateur B, puis re récupérez vos modifications "stashée" :
+
+    git stash pop
+
+10. Récupérez un état fonctionnel du repo partout chez chaque collaborateur.
+Créez une derniere branche chacun, créez 2/3 commits chacun, comme tout a l'heure, push/pull request.
+SAUF QUE nous allons commit et push sous une version spécifiée via "tag" :
+
+    git add .
+    git commit -m "Version stable"
+    git tag -a v1.0.1 -m "Premiere version stable"
+
+Vous pouvez aussi créer un commit et le tag en une seule ligne :
+
+    git commit -m "Version stable" && git tag -a v1.0.1 -m "Premiere version stable"
+
+Ensuite, push la derniere version:
+
+    git push origin main v1.0.1
+
+Possibilité d'utiliser :
+
+    git push origin main --follow-tags
+
+Possibilité (optionnelle) de rajouter un tag a un commit passé :
+
+    git tag -a v1.0.0 [HASH DU COMMIT] -m "Version précédente"
