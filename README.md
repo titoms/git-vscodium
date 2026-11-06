@@ -1,5 +1,8 @@
 # InfraLab
 
+
+# JMA / 20261106 - ajout branche test-b
+
 InfraLab est une application interne **fictive** de supervision et d'exploitation.
 Elle sert de support à la formation « Git et VS Codium » : tout y est inventé,
 aucun script ne se connecte à un serveur, à un service ou à une base de données.
