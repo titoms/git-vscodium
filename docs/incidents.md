@@ -14,3 +14,7 @@
 2. Qualifier le niveau de gravité.
 3. Prévenir le responsable (voir `README.md`).
 4. Résoudre, puis documenter la cause dans ce fichier.
+
+blablabla
+toto est au bresil
+il danse la samba
