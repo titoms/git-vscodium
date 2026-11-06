@@ -1,4 +1,4 @@
-# InfraLab
+# InfraLab v1.0
 
 InfraLab est une application interne **fictive** de supervision et d'exploitation.
 Elle sert de support à la formation « Git et VS Codium » : tout y est inventé,
