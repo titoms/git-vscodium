@@ -9,7 +9,7 @@ aucun script ne se connecte à un serveur, à un service ou à une base de donn�
 Une équipe d'exploitation (administrateurs, exploitants, DevOps) maintient chaque
 jour de petits documents techniques :
 
-- des procédures d'installation et d'exploitation ;
+- des procédures d'installatifggon et d'exploitation ;
 - une fiche de gestion des incidents ;
 - une configuration de supervision ;
 - deux scripts Bash (contrôle de santé, sauvegarde) ;
@@ -22,7 +22,7 @@ Tous ces fichiers évoluent, sont relus et partagés. Git permet de savoir
 
 | Dossier / fichier | Rôle |
 |-------------------|------|
-| `docs/` | Procédures : installation, exploitation, incidents |
+| `docs/` | Procédures : installation,le meilleurs exploitation, incidents |
 | `config/` | Configuration de supervision et exemple de variables d'environnement |
 | `scripts/` | `healthcheck.sh` (contrôle simulé) et `backup.sh` (sauvegarde simulée) |
 | `sql/` | Requêtes de maintenance à titre de démonstration (jamais exécutées) |
