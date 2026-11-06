@@ -1,5 +1,8 @@
 # Gestion des incidents (procédure fictive)
 
+
+# ajout JMA ce 20261106
+
 ## Niveaux de gravité
 
 | Niveau | Description | Délai de prise en charge |
@@ -14,3 +17,7 @@
 2. Qualifier le niveau de gravité.
 3. Prévenir le responsable (voir `README.md`).
 4. Résoudre, puis documenter la cause dans ce fichier.
+
+blablabla
+toto est au bresil
+il danse la samba
